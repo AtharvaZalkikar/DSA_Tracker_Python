@@ -40,6 +40,14 @@ k=2
 
 # ---------------------------------------------------------
 # ✅ Hint 1 — Write a reverse() helper
+'''
+We need a small function that reverses elements in place between indices l and r
+reverse(nums, l, r):
+    while l < r:
+        swap nums[l] and nums[r]
+        l += 1
+        r -= 1
+'''
 # ---------------------------------------------------------
 def reverse(nums,l,r):
     while l<r:
@@ -100,4 +108,34 @@ k = 12
 n = 5
 k % n = 2
 So rotating left by 12 steps = rotating left by 2 steps.
+'''
+# ----------------------------------------------------------------------------
+
+# 👉 But what changes when k is large?
+
+'''
+nums = [1,2,3,4,5]
+k = 12
+n = 5
+k % n = 2
+
+# So rotating left by 12 steps = rotating left by 2 steps.
+
+👉 Why?
+Because every n rotations, the array comes back to original.
+
+12 = 2 + (2 * 5)
+so 12 rotations ≡ 2 rotations
+
+k = k % len(nums)
+
+✔️ Quick summary
+
+| k value | Effective rotation | Reversals done    | Result     |
+| ------- | ------------------ | ----------------- | ---------- |
+| k = 2   | 2                  | 3                 | correct    |
+| k = 7   | 7 % 5 = 2          | 3                 | correct    |
+| k = 100 | 100 % 5 = 0        | 3 (but no effect) | same array |
+
+
 '''

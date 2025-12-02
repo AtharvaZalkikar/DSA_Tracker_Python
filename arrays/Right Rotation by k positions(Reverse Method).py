@@ -60,3 +60,18 @@ reverse(nums,0,k-1)
 reverse(nums,k,n-1)
 
 print(nums)
+
+
+'''
+🧠 Why only 3 reversals?
+
+Because reverse-move technique always works in exactly 3 steps:
+
+✔ Reverse all
+✔ Reverse first segment
+✔ Reverse second segment
+
+Even if k is 1000 or 1 crore —
+k = k % n reduces it to a number < n
+so you always do exactly 3 reverses.
+'''

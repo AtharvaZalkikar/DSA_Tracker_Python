@@ -54,3 +54,6 @@ Increase i
 
 This method avoids the “fill-zero afterwards” step — it keeps swapping as it goes.
 '''
+
+# Both are correct.
+# Most interviewers prefer the swap approach because it follows the two-pointer pattern used in many array problems.

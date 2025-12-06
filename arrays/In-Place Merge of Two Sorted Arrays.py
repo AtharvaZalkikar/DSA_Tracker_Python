@@ -67,6 +67,7 @@ Initialize pointers:
 i = m - 1   → 3  (points to 7)
 j = n - 1   → 2  (points to 6)
 k = m+n-1   → 6  (last index of nums1)
+
 Now compare from the end:
 
 1️⃣ Compare 7 and 6
@@ -116,12 +117,73 @@ Continue until nums2 is fully merged.
 
 This is the cleanest, most efficient merging strategy.
 
-👍 If you're ready:
-
-I can now guide you to implement this code step-by-step,
-OR
-you can try writing the code yourself and I’ll help with hints.
-
 '''
 
 # This problem appears in interviews at FAANG, Adobe, Microsoft, etc.
+
+'''
+🔥 Concept: In-Place Merge of Two Sorted Arrays
+(Without using extra space for "merged" list)
+
+We have:
+
+nums1 = [1, 3, 5, 7, _, _, _]   # size = m + n  (empty space at end)
+nums2 = [2, 4, 6]               # size = n
+
+Goal:
+nums1 → [1, 2, 3, 4, 5, 6, 7]
+
+Done in-place, meaning:
+
+No new list like merged = []
+
+We use the empty space at the back of nums1
+
+This is the LeetCode #88: Merge Sorted Array pattern.
+'''
+
+
+nums1 = [1,3,5,7,0,0,0]
+nums2 = [2,4,6]
+
+m=4
+n=3
+
+print(len(nums1))
+
+#initialise 3 pointers
+
+i = m-1
+j = n-1
+k = m+n-1
+
+# Then compare nums1[i] and nums2[j] and fill nums1 from right to left.
+
+'''
+nums1 = [1,3,5,7,_,_,_]
+nums2 = [2,4,6]
+
+i = 3 (nums1[3] = 7)
+j = 2 (nums2[2] = 6)
+k = 6
+'''
+
+while i>=0 and j>=0:
+    if nums1[i]>nums2[j]:
+        nums1[k]=nums1[i]
+        i-=1
+    else:
+        nums1[k]=nums2[j]
+        j-=1
+    k-=1
+
+# After one list finishes:
+# If nums2 still has remaining elements → copy them into nums1.
+# If nums1 has remaining elements → they are already correctly placed.
+
+while j>=0:
+    nums1[k]=nums2[j]
+    j-=1
+    k-=1
+    
+print(nums1)

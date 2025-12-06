@@ -1,0 +1,27 @@
+# Rotate the Matrix by 90 degree clockwise
+
+matrix = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+]
+print(matrix)
+
+n = len(matrix)
+
+# print(n)
+
+# STEP 1 Transpose the matrix
+
+for i in range(n):
+    for j in range(i+1,n):
+        matrix[i][j],matrix[j][i] = matrix[j][i],matrix[i][j]
+
+print(matrix)
+
+# Step 2 reverse the row
+
+for row in matrix:
+    row.reverse() 
+
+print(matrix)

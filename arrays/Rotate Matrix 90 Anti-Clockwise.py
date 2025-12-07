@@ -49,5 +49,16 @@ for col in range(n):
         matrix[top][col],matrix[bottom][col] = matrix[bottom][col],matrix[top][col]
         top +=1
         bottom -=1
+    print(f"for col:{col}, top:{top}, bottom:{bottom} the matrix is:{matrix} ")
 
-print(matrix)
+print(f"90 degree Anticlockwise Rotated Matrix:{matrix}")
+
+
+'''
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Transposed Matrix:[[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+for col:0, top:1, bottom:1 the matrix is:[[3, 4, 7], [2, 5, 8], [1, 6, 9]]
+for col:1, top:1, bottom:1 the matrix is:[[3, 6, 7], [2, 5, 8], [1, 4, 9]]
+for col:2, top:1, bottom:1 the matrix is:[[3, 6, 9], [2, 5, 8], [1, 4, 7]]
+90 degree Anticlockwise Rotated Matrix:[[3, 6, 9], [2, 5, 8], [1, 4, 7]]
+'''

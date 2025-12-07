@@ -28,9 +28,11 @@ def Kadane(nums):
     for num in nums:
         current_sum = current_sum + num
         max_sum = max(max_sum, current_sum)
+        print(f"for num:{num} the current_sum is {current_sum} and max_sum is {max_sum} ")
 
         if current_sum<0:
             current_sum=0
+            print(f"curent sum reset")
         
     return max_sum
 

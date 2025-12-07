@@ -9,7 +9,6 @@ print(matrix)
 
 n = len(matrix)
 
-# print(n)
 
 # STEP 1 Transpose the matrix
 

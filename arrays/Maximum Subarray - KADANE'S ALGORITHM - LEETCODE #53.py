@@ -15,6 +15,7 @@ def Kadane(nums):
 
     current_sum = 0
     max_sum = -float('inf')   #necessary to handle array with all negative numbers
+    # ❌ Never initialize max_sum to 0
 
     '''
     Why?

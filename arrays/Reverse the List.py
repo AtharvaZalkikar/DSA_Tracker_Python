@@ -20,7 +20,7 @@ reverse = []
 for i in range(len(nums)):
     reverse.append(nums[-(i+1)])
 
-print(reverse)
+print(reverse) #prints list named reverse
 
 
 #💡 Alternative (simpler) approach
